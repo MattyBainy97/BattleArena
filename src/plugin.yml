@@ -1,0 +1,19 @@
+name: BattleArena
+main: com.battlearena.BattleArena
+author: Matty
+version: 1.0
+description: >
+             BattleArena Plugin
+
+commands:
+  start:
+    description: Starts the game
+    permission: ba.start
+    permission-message: Permission Denied!
+  test:
+    description: tests the kd function
+
+permissions:
+  ba.start:
+    description: Allows use of start commands
+    default: op
