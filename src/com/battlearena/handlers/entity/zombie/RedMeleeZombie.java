@@ -11,8 +11,7 @@ public class RedMeleeZombie extends MeleeZombie {
 
         super(world);
 
-        this.goalSelector.a(0, new PathfinderGoalWalkToLoc(this, new Location(Bukkit.getWorld("BattleArena"), 649.5, 4.0, -28.5), 0.1D));
-        this.targetSelector.a(3, new PathfinderGoalNearestAttackableTarget(this, BlueMeleeZombie.class, true));
+        this.goalSelector.a(1, new PathfinderGoalWalkToLoc(this, new Location(Bukkit.getWorld("BattleArena"), 649.5, 4.0, -28.5), 1D));
         this.setCustomName(ChatColor.RED + "██████");
         this.setHelmet(Color.RED);
 

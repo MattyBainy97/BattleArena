@@ -23,6 +23,7 @@ public enum CustomEntityType {
     private MinecraftKey oldKey;
 
     private CustomEntityType(String name, int id, EntityType entityType, Class<?> nmsClass, Class<?> customClass){
+
         this.name = name;
         this.id = id;
         this.entityType = entityType;
@@ -30,6 +31,7 @@ public enum CustomEntityType {
         this.customClass = customClass;
         this.key = new MinecraftKey(name);
         this.oldKey = EntityTypes.b.b((Class<? extends Entity>) nmsClass);
+
     }
 
     public String getName(){

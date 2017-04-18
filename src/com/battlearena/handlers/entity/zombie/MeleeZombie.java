@@ -30,6 +30,8 @@ abstract class MeleeZombie extends EntityZombie{
         this.getAttributeInstance(GenericAttributes.ATTACK_DAMAGE).setValue(2.0D);
         this.getAttributeInstance(GenericAttributes.MOVEMENT_SPEED).setValue(0.1D);
 
+        this.goalSelector.a(0, new PathfinderGoalFloat(this));
+
         this.setHealth(12.0F);
 
         this.setSilent(true);

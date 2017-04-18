@@ -8,40 +8,30 @@ public class PathfinderGoalWalkToLoc extends PathfinderGoal{
     private double speed;
     private EntityInsentient entity;
     private Location loc;
-    private NavigationAbstract navigation;
+    private BlockPosition blockPosition;
 
-    public PathfinderGoalWalkToLoc(EntityInsentient entity, Location loc, double speed)
-    {
+    public PathfinderGoalWalkToLoc(EntityInsentient entity, Location loc, double speed) {
 
         this.entity = entity;
         this.loc = loc;
         this.speed = speed;
-        this.navigation = this.entity.getNavigation();
+        a(5);
 
     }
 
-    @Override
     public boolean a(){
+
+        this.entity.onGround = true;
+
+        this.blockPosition = new BlockPosition(loc.getX(), loc.getY(), loc.getZ());
 
         return true;
 
     }
 
-    @Override
-    public void c()
-    {
+    public void c() {
 
-        PathEntity pathEntity = this.navigation.a(loc.getX(), loc.getY(), loc.getZ());
-        this.navigation.a(pathEntity, speed);
-
-    }
-
-    @Override
-    public void e()
-    {
-
-        PathEntity pathEntity = this.navigation.a(loc.getX(), loc.getY(), loc.getZ());
-        this.navigation.a(pathEntity, speed);
+        this.entity.getNavigation().a(blockPosition.getX() + 0.5, blockPosition.getY(), blockPosition.getZ() + 0.5, speed);
 
     }
 
